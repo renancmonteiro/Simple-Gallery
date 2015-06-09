@@ -1,0 +1,92 @@
+<html>
+<head>
+
+	<title>A Simple Gallery</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(function() {
+			$('.small-img img').hover(function() {
+				var imgSrc = $(this).attr('src');
+				console.log(imgSrc);
+				$('.large-img img').attr('src',imgSrc);
+			});
+		});
+	</script>
+
+	<style type="text/css">
+		body{
+			background-color: #f9f9f9;
+		}
+
+		#main-gallery{
+			width: 900px;
+			height: 500px;
+			margin: auto;
+			background-color: #FFF;
+			border: 1px solid #ddd;
+		}
+
+		#main-gallery .large-img{
+			width: 900px;
+			height: auto;
+			overflow: hidden;
+		}
+
+		#main-gallery .large-img img{
+			max-width: 900px;
+			height: auto;
+		}
+
+		#main-gallery .small-img{
+			width: 900px;
+			height: 100px;
+			background-color: #444;
+		}
+
+		#main-gallery .small-img .img-holder{
+			width: 140px;
+			height: 90px;
+			margin: 5px 0px 5px 5px;
+			overflow: hidden;
+			float: left;
+		}
+
+		#main-gallery .small-img img{
+		 	width: 140px;
+		 	height: 90;
+		 	opacity: .5;
+		 	border-radius: 4px;
+		 	-webkit-border-radius: 4px;
+		 	-moz-border-radius: 4px;
+		 	-o-border-radius: 4px;
+		}
+
+		#main-gallery .small-img img:hover{
+			opacity: 1;	
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<div id="main-gallery">
+		<div class="large-img">
+			<img src="img/1.jpg" alt="">
+		</div>
+		<div class="small-img">
+			<div class="img-holder">
+				<img src="img/1.jpg" alt="">
+			</div>
+			<div class="img-holder">
+				<img src="img/2.jpg" alt="">
+			</div>
+			<div class="img-holder">
+				<img src="img/3.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
